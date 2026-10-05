@@ -1,0 +1,124 @@
+{
+ "run_name": "02_bake_midpoint",
+ "model": {
+  "vocab_size": 8192,
+  "seq_len": 512,
+  "d_model": 384,
+  "n_layer": 10,
+  "n_head": 6,
+  "mlp_ratio": 4,
+  "mode": "midpoint",
+  "euler_iters": 4,
+  "ce_chunk": 8192,
+  "emb_std": 0.02
+ },
+ "train": {
+  "run_name": "02_bake_midpoint",
+  "batch_size": 32,
+  "total_tokens": 5000000,
+  "lr": 0.001,
+  "min_lr_frac": 0.1,
+  "warmup_frac": 0.05,
+  "min_warmup": 10,
+  "weight_decay": 0.1,
+  "grad_clip": 1.0,
+  "eval_every_tokens": 1000000000,
+  "eval_batches": 16,
+  "final_eval_tokens": 500000,
+  "log_every": 50,
+  "seed": 1337,
+  "dtype": "auto",
+  "max_steps": null,
+  "out_dir": "/content/repo/work/results",
+  "sample_prompt": "Once upon a time"
+ },
+ "hw": {
+  "device": "Tesla T4",
+  "total_mem_gb": 14.56,
+  "torch": "2.11.0+cu128",
+  "capability": [
+   7,
+   5
+  ]
+ },
+ "amp_dtype": "torch.float16",
+ "n_params": 21053184,
+ "n_params_non_embedding": 17710848,
+ "steps": 306,
+ "tokens_trained": 5013504,
+ "tokens_per_step": 16384,
+ "warmup_steps": 15,
+ "final_train_loss": 3.591440324783325,
+ "final_val_loss": 3.6165141520961637,
+ "diverged": false,
+ "tokens_per_sec": 60670.3347566452,
+ "train_time_s": 82.62324023246765,
+ "wall_time_s": 82.68200373649597,
+ "peak_mem_alloc_gb": 1.112898349761963,
+ "peak_mem_reserved_gb": 1.30078125,
+ "static_mem_gb": 0.25132131576538086,
+ "activation_mem_gb": 0.861577033996582,
+ "euler_recon_residual": null,
+ "sample": "Once upon a time, there was a little girl named Tim. One day, she loved to play with the forest.\n\nThe girl had a big box. She was very big boy named Lily and he loved to play with. She saw a big dog. The sun in the park.\n\n\nLily, \"I want to touch it, Timmy, Lily, Lily. But it, Lily. She thought it. You can play together with his mouth. \n\nLily and see a little girl named Timmy. They ran to play with his family. He climbed up on the ground. Timmy was happy.",
+ "history": {
+  "step": [
+   0,
+   50,
+   100,
+   150,
+   200,
+   250,
+   300,
+   305
+  ],
+  "tokens": [
+   16384,
+   835584,
+   1654784,
+   2473984,
+   3293184,
+   4112384,
+   4931584,
+   5013504
+  ],
+  "loss": [
+   9.087491989135742,
+   4.678335189819336,
+   4.067016124725342,
+   3.9827582836151123,
+   3.701531410217285,
+   3.7589993476867676,
+   3.5630950927734375,
+   3.6203393936157227
+  ],
+  "lr": [
+   6.666666666666667e-05,
+   0.0009682561907786258,
+   0.000823460616759353,
+   0.000600901221787878,
+   0.00036386707888279405,
+   0.00017976343588880448,
+   0.00010094372819302977,
+   0.00010002622358524446
+  ],
+  "tok_s": [
+   62515.27345273065,
+   60231.898726899024,
+   61030.81470008348,
+   61218.87852075819,
+   60254.872278338946,
+   60656.84728163104,
+   60736.08303725151,
+   60594.216467256214
+  ],
+  "val_step": [
+   305
+  ],
+  "val_tokens": [
+   5013504
+  ],
+  "val_loss": [
+   3.6165141520961637
+  ]
+ }
+}

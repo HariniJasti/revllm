@@ -1,0 +1,129 @@
+launch
+=== 03_reversible_maxbatch start 00:09:48
+  tokenizer trained (8192 tokens, 58s)
+  train: 51,000,000 tokens -> /content/repo/work/data/train.bin (125s)
+  validation: 1,000,000 tokens -> /content/repo/work/data/val.bin (5s)
+data ready: train 51,000,000 tok | val 1,000,000 tok | vocab 8192
+  B=    8  ok   0.48 GB
+  B=   16  ok   1.04 GB
+  B=   32  ok   1.11 GB
+  B=   64  ok   1.27 GB
+  B=  128  ok   2.21 GB
+  B=  256  ok   4.08 GB
+  B=  512  ok   7.84 GB
+  B= 1024  OOM  
+  B=  768  ok   11.60 GB
+  B=  896  ok   13.47 GB
+  B=  960  OOM  
+  B=  928  ok   13.94 GB
+  B=  944  ok   14.18 GB
+  B=  952  OOM  
+  => max batch for mode=midpoint: 944 sequences (483,328 tokens/step), 15.0 MB/sequence
+[03_reversible_bmax] mode=midpoint params=21.05M B=944 T=512 tok/step=483,328 steps=104 warmup=10 lr=3.00e-03 amp=torch.float16
+  step     0/104 loss 9.0806 gnorm 11.97 lr 3.00e-04    55.2k tok/s peak 14.02GB
+  step     5/104 loss 6.7634 gnorm 1.74 lr 1.80e-03    55.5k tok/s peak 14.18GB
+  -- val loss 5.9667 @ 4.8M tokens
+  step    10/104 loss 5.9575 gnorm 2.20 lr 3.00e-03    54.7k tok/s peak 14.18GB
+  step    15/104 loss 5.7842 gnorm 1.65 lr 2.98e-03    54.3k tok/s peak 14.18GB
+  -- val loss 5.7099 @ 9.7M tokens
+  step    20/104 loss 5.6693 gnorm 0.73 lr 2.93e-03    51.8k tok/s peak 14.18GB
+  step    25/104 loss 5.6492 gnorm 0.50 lr 2.83e-03    53.7k tok/s peak 14.18GB
+  -- val loss 5.6683 @ 14.5M tokens
+  step    30/104 loss 5.6221 gnorm 0.49 lr 2.71e-03    52.6k tok/s peak 14.18GB
+  step    35/104 loss 5.6171 gnorm 0.31 lr 2.56e-03    53.2k tok/s peak 14.18GB
+  -- val loss 5.6355 @ 19.3M tokens
+  step    40/104 loss 5.5889 gnorm 0.21 lr 2.38e-03    53.1k tok/s peak 14.18GB
+  step    45/104 loss 5.5922 gnorm 0.12 lr 2.18e-03    53.7k tok/s peak 14.18GB
+  -- val loss 5.6326 @ 24.2M tokens
+  step    50/104 loss 5.5800 gnorm 0.11 lr 1.96e-03    53.4k tok/s peak 14.18GB
+  step    55/104 loss 5.6052 gnorm 0.12 lr 1.74e-03    53.0k tok/s peak 14.18GB
+  -- val loss 5.6292 @ 29.0M tokens
+  step    60/104 loss 5.5751 gnorm 0.10 lr 1.51e-03    53.9k tok/s peak 14.18GB
+  step    65/104 loss 5.5799 gnorm 0.09 lr 1.29e-03    52.9k tok/s peak 14.18GB
+  -- val loss 5.6254 @ 33.8M tokens
+  step    70/104 loss 5.5905 gnorm 0.07 lr 1.08e-03    53.2k tok/s peak 14.18GB
+  step    75/104 loss 5.5951 gnorm 0.06 lr 8.86e-04    53.7k tok/s peak 14.18GB
+  -- val loss 5.6239 @ 38.7M tokens
+  step    80/104 loss 5.5772 gnorm 0.06 lr 7.11e-04    53.4k tok/s peak 14.18GB
+  step    85/104 loss 5.5912 gnorm 0.05 lr 5.63e-04    52.7k tok/s peak 14.18GB
+  -- val loss 5.6186 @ 43.5M tokens
+  step    90/104 loss 5.5787 gnorm 0.12 lr 4.45e-04    52.9k tok/s peak 14.18GB
+  step    95/104 loss 5.5752 gnorm 0.29 lr 3.61e-04    52.4k tok/s peak 14.18GB
+  -- val loss 5.6179 @ 48.3M tokens
+  step   100/104 loss 5.5730 gnorm 0.06 lr 3.12e-04    52.9k tok/s peak 14.18GB
+  step   103/104 loss 5.5757 gnorm 0.07 lr 3.01e-04    53.1k tok/s peak 14.18GB
+[03_reversible_bmax] DONE  train_loss 5.5812  val_loss 5.6162  53.4k tok/s  peak 14.18GB  time 15.7 min
+=== 03_reversible_maxbatch OK 00:30:28
+=== 03b_maxbatch_lr_ablation start 00:30:28
+data ready: train 51,000,000 tok | val 1,000,000 tok | vocab 8192
+[03b_reversible_bmax_lr1e-3] mode=midpoint params=21.05M B=944 T=512 tok/step=483,328 steps=104 warmup=10 lr=1.00e-03 amp=torch.float16
+  step     0/104 loss 9.0806 gnorm 11.97 lr 1.00e-04    50.4k tok/s peak 14.02GB
+  step     5/104 loss 9.3045 gnorm 60.90 lr 6.00e-04    50.0k tok/s peak 14.18GB
+  -- val loss 6.4221 @ 4.8M tokens
+  step    10/104 loss 6.3858 gnorm 1.47 lr 1.00e-03    51.2k tok/s peak 14.18GB
+  step    15/104 loss 5.8028 gnorm 0.46 lr 9.94e-04    51.7k tok/s peak 14.18GB
+  -- val loss 5.7268 @ 9.7M tokens
+  step    20/104 loss 5.6831 gnorm 1.07 lr 9.75e-04    51.7k tok/s peak 14.18GB
+  step    25/104 loss 5.5454 gnorm 0.81 lr 9.45e-04    51.5k tok/s peak 14.18GB
+  -- val loss 5.4562 @ 14.5M tokens
+  step    30/104 loss 5.4055 gnorm 0.89 lr 9.03e-04    51.4k tok/s peak 14.18GB
+  step    35/104 loss 5.2892 gnorm 1.22 lr 8.52e-04    50.9k tok/s peak 14.18GB
+  -- val loss 5.2130 @ 19.3M tokens
+  step    40/104 loss 5.1606 gnorm 1.58 lr 7.92e-04    50.7k tok/s peak 14.18GB
+  step    45/104 loss 5.0334 gnorm 0.67 lr 7.26e-04    51.1k tok/s peak 14.18GB
+  -- val loss 4.9435 @ 24.2M tokens
+  step    50/104 loss 4.8925 gnorm 0.47 lr 6.54e-04    51.0k tok/s peak 14.18GB
+  step    55/104 loss 4.8169 gnorm 0.40 lr 5.80e-04    51.1k tok/s peak 14.18GB
+  -- val loss 4.7487 @ 29.0M tokens
+  step    60/104 loss 4.6959 gnorm 0.60 lr 5.05e-04    50.8k tok/s peak 14.18GB
+  step    65/104 loss 4.6227 gnorm 0.72 lr 4.31e-04    50.7k tok/s peak 14.18GB
+  -- val loss 4.5871 @ 33.8M tokens
+  step    70/104 loss 4.5621 gnorm 0.69 lr 3.61e-04    51.1k tok/s peak 14.18GB
+  step    75/104 loss 4.5057 gnorm 0.45 lr 2.95e-04    50.7k tok/s peak 14.18GB
+  -- val loss 4.4683 @ 38.7M tokens
+  step    80/104 loss 4.4303 gnorm 0.43 lr 2.37e-04    51.2k tok/s peak 14.18GB
+  step    85/104 loss 4.4095 gnorm 0.27 lr 1.88e-04    50.5k tok/s peak 14.18GB
+  -- val loss 4.3915 @ 43.5M tokens
+  step    90/104 loss 4.3664 gnorm 0.28 lr 1.48e-04    50.3k tok/s peak 14.18GB
+  step    95/104 loss 4.3369 gnorm 0.29 lr 1.20e-04    50.5k tok/s peak 14.18GB
+  -- val loss 4.3390 @ 48.3M tokens
+  step   100/104 loss 4.3116 gnorm 0.25 lr 1.04e-04    50.1k tok/s peak 14.18GB
+=== 03b_maxbatch_lr_ablation FAILED
+=== ALL DONE
+=== 03b rerun start
+data ready: train 51,000,000 tok | val 1,000,000 tok | vocab 8192
+[03b_reversible_bmax_lr1e-3] mode=midpoint params=21.05M B=936 T=512 tok/step=479,232 steps=105 warmup=10 lr=1.00e-03 amp=torch.float16
+  step     0/105 loss 9.0806 gnorm 11.96 lr 1.00e-04    55.6k tok/s peak 13.90GB
+  step     5/105 loss 9.3950 gnorm 55.11 lr 6.00e-04    55.6k tok/s peak 14.06GB
+  -- val loss 6.4360 @ 4.8M tokens
+  step    10/105 loss 6.4004 gnorm 1.53 lr 1.00e-03    54.9k tok/s peak 14.06GB
+  step    15/105 loss 5.7609 gnorm 0.40 lr 9.94e-04    54.1k tok/s peak 14.06GB
+  -- val loss 5.6105 @ 9.6M tokens
+  step    20/105 loss 5.5704 gnorm 0.55 lr 9.76e-04    52.9k tok/s peak 14.06GB
+  step    25/105 loss 5.5046 gnorm 1.89 lr 9.46e-04    51.0k tok/s peak 14.06GB
+  -- val loss 5.3313 @ 14.4M tokens
+  step    30/105 loss 5.2915 gnorm 0.74 lr 9.05e-04    51.0k tok/s peak 14.06GB
+  step    35/105 loss 5.1237 gnorm 0.63 lr 8.55e-04    51.1k tok/s peak 14.06GB
+  -- val loss 4.9878 @ 19.2M tokens
+  step    40/105 loss 4.9511 gnorm 0.93 lr 7.96e-04    50.8k tok/s peak 14.06GB
+  step    45/105 loss 4.7823 gnorm 0.53 lr 7.31e-04    50.8k tok/s peak 14.06GB
+  -- val loss 4.6623 @ 24.0M tokens
+  step    50/105 loss 4.6315 gnorm 0.49 lr 6.60e-04    50.5k tok/s peak 14.06GB
+  step    55/105 loss 4.5367 gnorm 0.89 lr 5.87e-04    50.5k tok/s peak 14.06GB
+  -- val loss 4.4488 @ 28.8M tokens
+  step    60/105 loss 4.4235 gnorm 0.48 lr 5.13e-04    50.5k tok/s peak 14.06GB
+  step    65/105 loss 4.3430 gnorm 0.30 lr 4.40e-04    50.5k tok/s peak 14.06GB
+  -- val loss 4.3129 @ 33.5M tokens
+  step    70/105 loss 4.2957 gnorm 0.27 lr 3.69e-04    50.7k tok/s peak 14.06GB
+  step    75/105 loss 4.2596 gnorm 0.19 lr 3.04e-04    49.8k tok/s peak 14.06GB
+  -- val loss 4.2284 @ 38.3M tokens
+  step    80/105 loss 4.1994 gnorm 0.22 lr 2.45e-04    50.4k tok/s peak 14.06GB
+  step    85/105 loss 4.1729 gnorm 0.16 lr 1.95e-04    50.6k tok/s peak 14.06GB
+  -- val loss 4.1769 @ 43.1M tokens
+  step    90/105 loss 4.1477 gnorm 0.15 lr 1.54e-04    50.3k tok/s peak 14.06GB
+  step    95/105 loss 4.1348 gnorm 0.12 lr 1.24e-04    50.4k tok/s peak 14.06GB
+  -- val loss 4.1414 @ 47.9M tokens
+  step   100/105 loss 4.1136 gnorm 0.12 lr 1.06e-04    50.3k tok/s peak 14.06GB
+  step   104/105 loss 4.1174 gnorm 0.12 lr 1.00e-04    50.8k tok/s peak 14.06GB
+[03b_reversible_bmax_lr1e-3] DONE  train_loss 4.2429  val_loss 4.1266  51.2k tok/s  peak 14.06GB  time 16.3 min
+=== 03b OK

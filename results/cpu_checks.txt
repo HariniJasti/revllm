@@ -1,0 +1,25 @@
+== 1. gradient check vs plain autograd (float64, d=128, 4 layers, T=64) ==
+  revnet    rel_err=3.69e-15
+  midpoint  rel_err=2.29e-15
+  euler emb_std=0.02 iters=1  rel_err=9.33e-01  fixed-point step=6.6e-01
+  euler emb_std=0.02 iters=4  rel_err=9.42e-01  fixed-point step=6.5e-01
+  euler emb_std=0.02 iters=8  rel_err=9.56e-01  fixed-point step=8.4e-01
+  euler emb_std=0.02 iters=16 rel_err=9.35e-01  fixed-point step=9.6e-01
+  euler emb_std=0.1  iters=1  rel_err=4.79e-01  fixed-point step=4.6e-01
+  euler emb_std=0.1  iters=4  rel_err=1.54e-01  fixed-point step=1.3e-01
+  euler emb_std=0.1  iters=8  rel_err=8.22e-02  fixed-point step=1.0e-01
+  euler emb_std=0.1  iters=16 rel_err=2.94e-02  fixed-point step=4.9e-02
+  euler emb_std=0.5  iters=1  rel_err=2.07e-02  fixed-point step=1.1e-01
+  euler emb_std=0.5  iters=4  rel_err=6.87e-05  fixed-point step=2.3e-04
+  euler emb_std=0.5  iters=8  rel_err=4.63e-08  fixed-point step=1.9e-07
+  euler emb_std=0.5  iters=16 rel_err=1.72e-14  fixed-point step=1.2e-13
+
+== 2. full-size model (21.05M), fp32, chunked CE: reversible vs autograd ==
+  revnet    params=21.05M rel_err=2.63e-06
+  midpoint  params=21.05M rel_err=2.30e-06
+
+== 3. activation memory saved for backward (fp32, T=512, ce_chunk=512) ==
+  standard   121.71 MB / sequence  ( 243.4 KB / token)
+  euler        1.51 MB / sequence  (   3.0 KB / token)
+  midpoint     2.26 MB / sequence  (   4.5 KB / token)
+  revnet       3.01 MB / sequence  (   6.0 KB / token)

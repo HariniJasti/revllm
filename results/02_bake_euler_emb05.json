@@ -1,0 +1,124 @@
+{
+ "run_name": "02_bake_euler_emb05",
+ "model": {
+  "vocab_size": 8192,
+  "seq_len": 512,
+  "d_model": 384,
+  "n_layer": 10,
+  "n_head": 6,
+  "mlp_ratio": 4,
+  "mode": "euler",
+  "euler_iters": 4,
+  "ce_chunk": 8192,
+  "emb_std": 0.5
+ },
+ "train": {
+  "run_name": "02_bake_euler_emb05",
+  "batch_size": 32,
+  "total_tokens": 5000000,
+  "lr": 0.001,
+  "min_lr_frac": 0.1,
+  "warmup_frac": 0.05,
+  "min_warmup": 10,
+  "weight_decay": 0.1,
+  "grad_clip": 1.0,
+  "eval_every_tokens": 1000000000,
+  "eval_batches": 16,
+  "final_eval_tokens": 500000,
+  "log_every": 50,
+  "seed": 1337,
+  "dtype": "auto",
+  "max_steps": null,
+  "out_dir": "/content/repo/work/results",
+  "sample_prompt": "Once upon a time"
+ },
+ "hw": {
+  "device": "Tesla T4",
+  "total_mem_gb": 14.56,
+  "torch": "2.11.0+cu128",
+  "capability": [
+   7,
+   5
+  ]
+ },
+ "amp_dtype": "torch.float16",
+ "n_params": 21053184,
+ "n_params_non_embedding": 17710848,
+ "steps": 306,
+ "tokens_trained": 5013504,
+ "tokens_per_step": 16384,
+ "warmup_steps": 15,
+ "final_train_loss": 5.929412202835083,
+ "final_val_loss": 5.9814348220825195,
+ "diverged": false,
+ "tokens_per_sec": 34151.82145494568,
+ "train_time_s": 146.83393907546997,
+ "wall_time_s": 146.87422895431519,
+ "peak_mem_alloc_gb": 1.089460849761963,
+ "peak_mem_reserved_gb": 1.30078125,
+ "static_mem_gb": 0.25132131576538086,
+ "activation_mem_gb": 0.838139533996582,
+ "euler_recon_residual": 0.07279007881879807,
+ "sample": "Once upon a time, and.\n was. The she day on, said.\n, the It\n was it to of They\n\n their was. a mom and They was and and he and. She was. He mom. \" the They\n. They\n felt the\n\n. He, She. a little was was was, He so Lily. \n. \n, He was was. They. and a little and they, She them! and, and a and a It. day They his They\n too\n was He\n with big on\n girl the you the\n on",
+ "history": {
+  "step": [
+   0,
+   50,
+   100,
+   150,
+   200,
+   250,
+   300,
+   305
+  ],
+  "tokens": [
+   16384,
+   835584,
+   1654784,
+   2473984,
+   3293184,
+   4112384,
+   4931584,
+   5013504
+  ],
+  "loss": [
+   130.99900817871094,
+   7.658202648162842,
+   6.166238784790039,
+   6.068463325500488,
+   5.894497871398926,
+   5.997822284698486,
+   5.910398960113525,
+   5.945068836212158
+  ],
+  "lr": [
+   6.666666666666667e-05,
+   0.0009682561907786258,
+   0.000823460616759353,
+   0.000600901221787878,
+   0.00036386707888279405,
+   0.00017976343588880448,
+   0.00010094372819302977,
+   0.00010002622358524446
+  ],
+  "tok_s": [
+   34206.59544021416,
+   34314.18628570573,
+   34294.37329250449,
+   33943.17080430418,
+   34068.19974865092,
+   34153.19690968866,
+   34058.23781771865,
+   34226.01731833725
+  ],
+  "val_step": [
+   305
+  ],
+  "val_tokens": [
+   5013504
+  ],
+  "val_loss": [
+   5.9814348220825195
+  ]
+ }
+}

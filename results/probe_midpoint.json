@@ -1,0 +1,88 @@
+{
+ "mode": "midpoint",
+ "max_batch": 944,
+ "max_tokens_per_step": 483328,
+ "hit_limit": false,
+ "gb_per_sequence": 0.014632038581065642,
+ "trace": [
+  {
+   "batch": 8,
+   "ok": true,
+   "peak_gb": 0.48193883895874023
+  },
+  {
+   "batch": 16,
+   "ok": true,
+   "peak_gb": 1.0364813804626465
+  },
+  {
+   "batch": 32,
+   "ok": true,
+   "peak_gb": 1.1127753257751465
+  },
+  {
+   "batch": 64,
+   "ok": true,
+   "peak_gb": 1.2667603492736816
+  },
+  {
+   "batch": 128,
+   "ok": true,
+   "peak_gb": 2.2057251930236816
+  },
+  {
+   "batch": 256,
+   "ok": true,
+   "peak_gb": 4.083654880523682
+  },
+  {
+   "batch": 512,
+   "ok": true,
+   "peak_gb": 7.839514255523682
+  },
+  {
+   "batch": 1024,
+   "ok": false,
+   "peak_gb": null
+  },
+  {
+   "batch": 768,
+   "ok": true,
+   "peak_gb": 11.595373630523682
+  },
+  {
+   "batch": 896,
+   "ok": true,
+   "peak_gb": 13.473303318023682
+  },
+  {
+   "batch": 960,
+   "ok": false,
+   "peak_gb": null
+  },
+  {
+   "batch": 928,
+   "ok": true,
+   "peak_gb": 13.942785739898682
+  },
+  {
+   "batch": 944,
+   "ok": true,
+   "peak_gb": 14.177526950836182
+  },
+  {
+   "batch": 952,
+   "ok": false,
+   "peak_gb": null
+  }
+ ],
+ "hw": {
+  "device": "Tesla T4",
+  "total_mem_gb": 14.56,
+  "torch": "2.11.0+cu128",
+  "capability": [
+   7,
+   5
+  ]
+ }
+}

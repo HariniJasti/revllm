@@ -1,0 +1,101 @@
+[
+ {
+  "mode": "revnet",
+  "euler_iters": null,
+  "emb_std": 0.02,
+  "rel_err": 3.1082735285925354e-15,
+  "cosine": 0.9999999999999999,
+  "loss": 6.258131980895996,
+  "euler_fixed_point_residual": null
+ },
+ {
+  "mode": "midpoint",
+  "euler_iters": null,
+  "emb_std": 0.02,
+  "rel_err": 1.711444805972844e-15,
+  "cosine": 1.0,
+  "loss": 6.289798736572266,
+  "euler_fixed_point_residual": null
+ },
+ {
+  "mode": "euler",
+  "euler_iters": 1,
+  "emb_std": 0.02,
+  "rel_err": 0.9432686658873156,
+  "cosine": 0.5111408839560672,
+  "loss": 6.275150299072266,
+  "euler_fixed_point_residual": 0.674133837223053
+ },
+ {
+  "mode": "euler",
+  "euler_iters": 4,
+  "emb_std": 0.02,
+  "rel_err": 0.9636972617205638,
+  "cosine": 0.5440718447031162,
+  "loss": 6.275150299072266,
+  "euler_fixed_point_residual": 0.6066368818283081
+ },
+ {
+  "mode": "euler",
+  "euler_iters": 8,
+  "emb_std": 0.02,
+  "rel_err": 0.9839568874582166,
+  "cosine": 0.5329156576424892,
+  "loss": 6.275150299072266,
+  "euler_fixed_point_residual": 0.954562246799469
+ },
+ {
+  "mode": "euler",
+  "euler_iters": 1,
+  "emb_std": 0.1,
+  "rel_err": 0.46999617916572267,
+  "cosine": 0.8932834344676386,
+  "loss": 7.349482536315918,
+  "euler_fixed_point_residual": 0.4661697447299957
+ },
+ {
+  "mode": "euler",
+  "euler_iters": 4,
+  "emb_std": 0.1,
+  "rel_err": 0.14843094257732248,
+  "cosine": 0.989099575011801,
+  "loss": 7.349482536315918,
+  "euler_fixed_point_residual": 0.12859860062599182
+ },
+ {
+  "mode": "euler",
+  "euler_iters": 8,
+  "emb_std": 0.1,
+  "rel_err": 0.05570148507839382,
+  "cosine": 0.9984535486480262,
+  "loss": 7.349482536315918,
+  "euler_fixed_point_residual": 0.06890446692705154
+ },
+ {
+  "mode": "euler",
+  "euler_iters": 1,
+  "emb_std": 0.5,
+  "rel_err": 0.0203924401694579,
+  "cosine": 0.9997920691179257,
+  "loss": 43.633155822753906,
+  "euler_fixed_point_residual": 0.1103951707482338
+ },
+ {
+  "mode": "euler",
+  "euler_iters": 4,
+  "emb_std": 0.5,
+  "rel_err": 5.6916956340996454e-05,
+  "cosine": 0.9999999983803157,
+  "loss": 43.633155822753906,
+  "euler_fixed_point_residual": 0.00022437206644099206
+ },
+ {
+  "mode": "euler",
+  "euler_iters": 8,
+  "emb_std": 0.5,
+  "rel_err": 3.795760476291719e-08,
+  "cosine": 0.9999999999999993,
+  "loss": 43.633155822753906,
+  "euler_fixed_point_residual": 1.4593300079468463e-07
+ }
+]

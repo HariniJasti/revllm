@@ -1,0 +1,67 @@
+{
+ "name": "midpoint",
+ "model": {
+  "vocab_size": 8192,
+  "seq_len": 512,
+  "d_model": 384,
+  "n_layer": 10,
+  "n_head": 6,
+  "mlp_ratio": 4,
+  "mode": "midpoint",
+  "euler_iters": 4,
+  "ce_chunk": 8192,
+  "emb_std": 0.02
+ },
+ "bakeoff": [
+  {
+   "variant": "standard (ref)",
+   "val_loss": 3.533275604248047,
+   "train_loss": 3.5062100410461428,
+   "tok/s": 76270,
+   "peak GB": 3.237898349761963,
+   "act GB": 2.986577033996582,
+   "diverged": false,
+   "euler residual": NaN
+  },
+  {
+   "variant": "euler (4 it)",
+   "val_loss": 5.981689960725846,
+   "train_loss": 5.954333114624023,
+   "tok/s": 33847,
+   "peak GB": 1.089460849761963,
+   "act GB": 0.838139533996582,
+   "diverged": false,
+   "euler residual": 0.11043186485767365
+  },
+  {
+   "variant": "euler (4 it, emb .5)",
+   "val_loss": 5.9814348220825195,
+   "train_loss": 5.929412202835083,
+   "tok/s": 34152,
+   "peak GB": 1.089460849761963,
+   "act GB": 0.838139533996582,
+   "diverged": false,
+   "euler residual": 0.07279007881879807
+  },
+  {
+   "variant": "midpoint",
+   "val_loss": 3.6165141520961637,
+   "train_loss": 3.591440324783325,
+   "tok/s": 60670,
+   "peak GB": 1.112898349761963,
+   "act GB": 0.861577033996582,
+   "diverged": false,
+   "euler residual": NaN
+  },
+  {
+   "variant": "revnet",
+   "val_loss": 3.9078255314980783,
+   "train_loss": 3.883457970619202,
+   "tok/s": 61527,
+   "peak GB": 1.136335849761963,
+   "act GB": 0.885014533996582,
+   "diverged": false,
+   "euler residual": NaN
+  }
+ ]
+}
